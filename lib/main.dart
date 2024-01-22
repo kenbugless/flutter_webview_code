@@ -38,10 +38,11 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(),
-      body: this.controller == null
-          ? Container()
-          : WebViewWidget(controller: controller!),
+      body: SafeArea(
+        child: this.controller == null
+            ? Container()
+            : WebViewWidget(controller: controller!),
+      ),
     );
   }
 }
